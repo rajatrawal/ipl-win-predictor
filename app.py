@@ -29,15 +29,15 @@ cities = ['Hyderabad', 'Bangalore', 'Mumbai', 'Indore', 'Kolkata', 'Delhi',
 
 selected_city = st.selectbox('Cities',sorted(cities))
 
-target = st.number_input('Target')
+target = st.number_input('Target',min_value=0)
 
 col3,col4,col5 = st.columns(3)
 with col3 :
-    score =st.number_input('Score')
+    score =st.number_input('Score',min_value=0)
 with col4 :
-    wickets =st.number_input('Wickets')
+    wickets =st.number_input('Wickets',min_value=0,max_value=9)
 with col5 :
-    overs = st.number_input('Overs completed')
+    overs = st.number_input('Overs completed',min_value=0,max_value=20)
     
 if st.button('Predict Probability'):
     runs_left = target-score
